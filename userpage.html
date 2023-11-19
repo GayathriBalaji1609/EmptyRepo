@@ -221,7 +221,7 @@
     <div class="form-container">
       <label class="label" for="item">Add Item</label>
       <input class="input-field" type="text" id="item" placeholder="Enter item">
-      <button class="add-item-btn" type="button" id="addItemBtn" onclick="addItem()" disabled>Add Item</button>
+      <button class="add-item-btn" type="button" id="addItemBtn" onclick="addItem()" disabled>Submit</button>
   
       <div class="success-message" id="successMessage"></div>
   
@@ -246,7 +246,7 @@
       <div id="dropdownsuccess" class="success-message"></div>
     </div>
     
-    <button class="logout" onclick="location.href='index.html'">Logout</button>
+    <button id="logout" class="logout" onclick="location.href='index.html'">Logout</button>
 </div>
 
 
@@ -273,6 +273,10 @@
       var errorDiv = document.getElementById('error');
       var successDiv = document.getElementById('success');
       var itemListDiv = document.getElementById('itemList');
+      let logoutbtnEl = document.getElementById('logout');
+      let username = document.getElementById('dataInput');
+
+      
 
       if (newItem === '') {
         let addsubmit = document.getElementById('addsubmit').disabled = true ;
@@ -335,10 +339,8 @@
         successMessage.textContent = 'Item successfully added: ' + itemValue;
 
         // Clear input and hide success message after a delay
-        inputElement.value = '';
-        setTimeout(function () {
-          successMessage.textContent = '';
-        }, 2000);
+        inputElement.value = "";
+        
       } else {
         // Display error message for duplicate item
         alert('Item already exists: ' + itemValue);
@@ -375,7 +377,9 @@
         }
 
         // Call the function to display the saved value on page load
-        displaySavedValue();
+       
+
+        
 
   </script>
 

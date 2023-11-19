@@ -79,7 +79,7 @@
 
   <form class="login-form">
     <h2>Login</h2>
-    <label for="username" class="form-label">Username:</label>
+    <label for="username" class="form-label">Email</label>
     <input type="text" id="username" class="form-input" required>
 
     <label for="password" class="form-label">Password:</label>
@@ -101,7 +101,7 @@
       // Check if the user exists in local storage
       var existingUsers = JSON.parse(localStorage.getItem('users')) || [];
       var user = existingUsers.find(function(user) {
-        return user.username === username && user.password === password;
+        return user.email === username && user.password === password;
       });
 
       if (user) {
