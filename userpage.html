@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .user-page {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .add-item-label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #555;
+    }
+
+    .item-input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 5px;
+    }
+
+    .item-list {
+      margin-top: 10px;
+    }
+
+
+
+
+    .dropdown-label {
+      display: block;
+      margin: 10px 0 5px;
+      color: rgb(9, 9, 9)d0d;
+    }
+
+    .dropdown {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .save-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .save-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 5px;
+    }
+
+    
+
+    .label {
+      display: block;
+      margin-bottom: 8px;
+      color: black;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    .add-item-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .add-item-btn:disabled {
+      background-color: #95a5a6;
+      cursor: not-allowed;
+    }
+
+    .add-item-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 5px;
+    }
+
+    .item-list {
+      margin-top: 15px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .item-list li {
+      margin-bottom: 5px;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #successMessage {
+            color: green;
+            margin-top: 10px;
+        }
+        .form-container{
+          margin-top: 20px;
+          margin-bottom: 25px;
+        }
+       .logout{
+        margin-top: 20px;
+       }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <label for="dataInput">User Name</label>
+    <input type="text" id="dataInput">
+
+    <button onclick="saveData()">Save</button>
+    <div id="successMessage1"></div>
+
+
+    <div class="form-container">
+      <label class="label" for="item">Add Item</label>
+      <input class="input-field" type="text" id="item" placeholder="Enter item">
+      <button class="add-item-btn" type="button" id="addItemBtn" onclick="addItem()" disabled>Add Item</button>
+  
+      <div class="success-message" id="successMessage"></div>
+  
+      <ul class="item-list" id="itemList">
+        <!-- Item elements will be added here dynamically -->
+      </ul>
+    </div>
+
+
+
+    <div >
+    
+      <label for="dropdown" class="dropdown-label">Select Item</label>
+      <select id="dropdown" class="dropdown">
+        <option value="Item 1">Item 1</option>
+        <option value="Item 2">Item 2</option>
+        <option value="Item 3">Item 3</option>
+      </select>
+  
+      <button type="button" class="save-btn" onclick="saveItem()">Save</button>
+  
+      <div id="dropdownsuccess" class="success-message"></div>
+    </div>
+    
+    <button class="logout" onclick="location.href='index.html'">Logout</button>
+</div>
+
+
+  
+
+
+
+</div>
+
+
+      
+    
+
+ 
+
+
+
+
+  <script>
+    var items = [];
+    
+    function submitItems() {
+      var newItem = document.getElementById('item').value;
+      var errorDiv = document.getElementById('error');
+      var successDiv = document.getElementById('success');
+      var itemListDiv = document.getElementById('itemList');
+
+      if (newItem === '') {
+        let addsubmit = document.getElementById('addsubmit').disabled = true ;
+        return;
+      }
+
+      if (items.includes(newItem)) {
+        errorDiv.textContent = 'Item already exists. Please enter a different one.';
+        return;
+      }
+
+      items.push(newItem);
+      document.getElementById('item').value = '';
+      errorDiv.textContent = '';
+
+      // Display added items
+      itemListDiv.innerHTML = 'Added Items: ' + items.join(', ');
+
+      // Display success message
+      successDiv.textContent = 'Successful message: Items have been successfully submitted.';
+    }
+
+
+
+    var savedItem = '';
+
+    function saveItem() {
+      var dropdown = document.getElementById('dropdown');
+      savedItem = dropdown.options[dropdown.selectedIndex].value;
+
+      var successDiv = document.getElementById('dropdownsuccess');
+
+      if (savedItem.trim() === '') {
+        successDiv.textContent = 'Please select a valid item.';
+        return;
+      }
+
+      successDiv.textContent = 'Item successfully saved: ' + savedItem;
+    }
+
+
+    function addItem() {
+      var inputElement = document.getElementById('item');
+      var itemValue = inputElement.value.trim();
+
+      if (itemValue === '') {
+        return; // Do not add empty items
+      }
+
+      var itemList = document.getElementById('itemList');
+      var existingItems = Array.from(itemList.children).map(item => item.textContent.trim());
+
+      if (!existingItems.includes(itemValue)) {
+        var listItem = document.createElement('li');
+        listItem.textContent = itemValue;
+        itemList.appendChild(listItem);
+
+        // Display success message
+        var successMessage = document.getElementById('successMessage');
+        successMessage.textContent = 'Item successfully added: ' + itemValue;
+
+        // Clear input and hide success message after a delay
+        inputElement.value = '';
+        setTimeout(function () {
+          successMessage.textContent = '';
+        }, 2000);
+      } else {
+        // Display error message for duplicate item
+        alert('Item already exists: ' + itemValue);
+      }
+    }
+
+    document.getElementById('item').addEventListener('input', function () {
+      // Enable/disable the "Add Item" button based on input presence
+      var addItemBtn = document.getElementById('addItemBtn');
+      addItemBtn.disabled = this.value.trim() === '';
+    });
+
+    function saveData() {
+            var inputValue = document.getElementById('dataInput').value;
+
+            if (inputValue.trim() !== '') {
+                // Save the value in localStorage
+                localStorage.setItem('savedValue', inputValue);
+
+                // Display success message
+                document.getElementById('successMessage1').innerHTML = 'Value saved successfully!';
+
+                // Display the saved value in the input field
+                displaySavedValue();
+            } else {
+                alert('Please enter a value before saving.');
+            }
+        }
+
+        // Function to display the saved value in the input field
+        function displaySavedValue() {
+            var savedValue = localStorage.getItem('savedValue');
+            document.getElementById('dataInput').value = savedValue || '';
+        }
+
+        // Call the function to display the saved value on page load
+        displaySavedValue();
+
+  </script>
+
+</body>
+</html>
