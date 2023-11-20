@@ -209,13 +209,15 @@
   </style>
 </head>
 <body>
-
+  
   <div class="container">
+    <h1>Cypress Automation Testing Practice Page</h1>
     <label for="dataInput">User Name</label>
-    <input type="text" id="dataInput">
-
+    <input type="text" id="dataInput" >
+    
     <button onclick="saveData()">Save</button>
     <div id="successMessage1"></div>
+    <div id="para"></div>
 
 
     <div class="form-container">
@@ -275,7 +277,7 @@
       var itemListDiv = document.getElementById('itemList');
       let logoutbtnEl = document.getElementById('logout');
       let username = document.getElementById('dataInput');
-
+      
       
 
       if (newItem === '') {
@@ -355,14 +357,22 @@
 
     function saveData() {
             var inputValue = document.getElementById('dataInput').value;
+            let containerEl =  document.getElementById('para');
+            let usernameEl = document.createElement('p')
+            
+            usernameEl.textContent = inputValue
+            usernameEl.style.visibility="hidden"
+            containerEl.appendChild(usernameEl)
 
             if (inputValue.trim() !== '') {
                 // Save the value in localStorage
                 localStorage.setItem('savedValue', inputValue);
+                
+                
 
                 // Display success message
                 document.getElementById('successMessage1').innerHTML = 'Value saved successfully!';
-
+                
                 // Display the saved value in the input field
                 displaySavedValue();
             } else {
