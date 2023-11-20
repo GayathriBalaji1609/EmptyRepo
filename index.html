@@ -103,8 +103,17 @@
       var user = existingUsers.find(function(user) {
         return user.email === username && user.password === password;
       });
+      if(username === "" &&  password === ""){
+        document.getElementById('error').textContent = 'Please enter username and password';
+      }
+      else if(username === ""){
+        document.getElementById('error').textContent = 'Please enter username';
+      }
+      else if( password === ""){
+        document.getElementById('error').textContent = 'Please enter password';
+      }
 
-      if (user) {
+      else if (user) {
         document.getElementById('error').textContent = 'Login successful!';
         // Redirect to the dashboard or another page after successful login
         window.location.href = 'userpage.html';
